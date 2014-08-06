@@ -1,8 +1,9 @@
+#coding: utf-8
 module Ancestry
   module InstanceMethods
     # Validate that the ancestors don't include itself
     def ancestry_exclude_self
-      errors.add(:base, "#{self.class.name.humanize} cannot be a descendant of itself.") if ancestor_ids.include? self.id
+      errors.add(:base, "não pode ser descendente de si próprio.") if ancestor_ids.include? self.id
     end
 
     # Update descendants with new ancestry
